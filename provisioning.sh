@@ -16,7 +16,7 @@ PIP_PACKAGES=(
 
 CHECKPOINT_MODELS=(
     "https://civitai.com/api/download/models/798204"
-    "https://civitai.com/api/download/models/763661"
+    "https://civitai.com/api/download/models/1763661"
 )
 
 UNET_MODELS=(
@@ -148,9 +148,10 @@ function provisioning_has_valid_civitai_token() {
 function provisioning_download() {
     if [[ -n $HF_TOKEN && $1 =~ ^https://([a-zA-Z0-9_-]+\.)?huggingface\.co(/|$|\?) ]]; then
         auth_token="$HF_TOKEN"
+        
     elif 
         [[ -n $CIVITAI_TOKEN && $1 =~ ^https://([a-zA-Z0-9_-]+\.)?civitai\.com(/|$|\?) ]]; then
-        auth_token="$CIVITAI_TOKEN"
+        wget --content-disposition --show-progress -P "$2" "${1}?token=${CIVITAI_TOKEN}"
     fi
     if [[ -n $auth_token ]];then
         wget --header="Authorization: Bearer $auth_token" -qnc --content-disposition --show-progress -e dotbytes="${3:-4M}" -P "$2" "$1"
