@@ -16,7 +16,7 @@ PIP_PACKAGES=(
 
 CHECKPOINT_MODELS=(
     #"https://civitai.com/api/download/models/1763661"
-    "https://civitai.com/api/download/models/2071650"
+    "https://civitai.com/api/download/models/1899516"
 )
 
 UNET_MODELS=(
@@ -28,6 +28,8 @@ LORA_MODELS=(
     "https://civitai.com/api/download/models/668147"
     "https://civitai.com/api/download/models/169536"
     "https://civitai.com/api/download/models/382152"
+    "https://civitai.com/api/download/models/1681903"
+    "https://civitai.com/api/download/models/1681921"
 )
 
 VAE_MODELS=(
