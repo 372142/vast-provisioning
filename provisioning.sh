@@ -15,8 +15,8 @@ PIP_PACKAGES=(
 )
 
 CHECKPOINT_MODELS=(
-    "https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-v1-5/blob/main/v1-5-pruned-emaonly.safetensors"
-    "https://civitai.com/api/download/models/1763661"
+    #"https://civitai.com/api/download/models/1763661"
+    "https://civitai.com/api/download/models/2071650"
 )
 
 UNET_MODELS=(
