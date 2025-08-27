@@ -41,6 +41,10 @@ ESRGAN_MODELS=(
 CONTROLNET_MODELS=(
 )
 
+EMBEDDINGS=(
+    "https://civitai.com/api/download/models/9208"
+)
+
 ### DO NOT EDIT BELOW HERE UNLESS YOU KNOW WHAT YOU ARE DOING ###
 
 function provisioning_start() {
@@ -54,6 +58,11 @@ function provisioning_start() {
     provisioning_get_files \
         "${FORGE_DIR}/models/Lora" \
         "${LORA_MODELS[@]}"
+    provisioning_get_files \
+        "${FORGE_DIR}/models/embeddings" \
+        "${EMBEDDINGS[@]}"
+
+        
 
     # Avoid git errors because we run as root but files are owned by 'user'
     export GIT_CONFIG_GLOBAL=/tmp/temporary-git-config
