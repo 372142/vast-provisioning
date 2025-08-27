@@ -59,7 +59,7 @@ function provisioning_start() {
         "${FORGE_DIR}/models/Lora" \
         "${LORA_MODELS[@]}"
     provisioning_get_files \
-        "${FORGE_DIR}/models/embeddings" \
+        "${FORGE_DIR}/embeddings" \
         "${EMBEDDINGS[@]}"
 
         
